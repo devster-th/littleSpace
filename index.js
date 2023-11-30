@@ -1,9 +1,31 @@
 const express = require('express')
 const app = express()
 const port = 3000
+var qs = require('qs')
+const querystring = require('node:querystring');
 
+//set
+app.use(express.static('website'))
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+//app.set('query parser','simple')
+
+
+
+/*
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send(1000)
+})
+*/
+
+app.get('/fill-skill', (req,res) => {
+  console.log(req.query)
+  res.send('ok got your data')
+})
+
+app.get('/find-skill', (req,res) => {
+  console.log(req.query)
+  res.send('ok will find for you')
 })
 
 app.listen(port, () => {
