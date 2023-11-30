@@ -20,12 +20,12 @@ app.get('/', (req, res) => {
 
 app.get('/fill-skill', (req,res) => {
   console.log(req.query)
-  res.send('ok got your data')
+  res.send(req.query)
 })
 
 app.get('/find-skill', (req,res) => {
   console.log(req.query)
-  res.send('ok will find for you')
+  res.send(req.query)
 })
 
 app.listen(port, () => {
